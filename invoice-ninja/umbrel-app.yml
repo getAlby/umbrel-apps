@@ -2,10 +2,11 @@ manifestVersion: 1.1
 id: invoice-ninja
 category: finance
 name: Invoice Ninja
-version: "v5.5.93"
-tagline: We’ll help with the invoicing
-description: |-
+version: "5.10.26"
+tagline: We'll help with the invoicing
+description: >-
   Invoicing, Quotes, Expenses, Tasks.
+
 
   Invoice Ninja is an invoicing application which makes sending invoices and receiving payments simple and easy. Our latest version is a clean slate rewrite of our popular invoicing application which builds on the existing feature set and adds a wide range of features and enhancements the community has asked for.
 developer: InvoiceNinja, Inc.
@@ -19,6 +20,18 @@ gallery:
 - 2.jpg
 - 3.jpg
 path: ''
+releaseNotes: >-
+  What’s Changed:
+
+    - Fixed issues with ZUGFeRD and inter-EU tax rules.
+    - Updated translations.
+    - Corrected tax calculations for recurring invoices.
+    - Added Purchase Order Accept Webhook.
+    - Introduced QuickBooks import feature.
+    - Added YunoHost as a self-hosted option.
+    - Fixed custom fields with switches to ensure proper output (yes/no).
+
+  Full release notes are available at https://github.com/invoiceninja/invoiceninja/releases.
 deterministicPassword: true
 defaultUsername: admin@example.com
 submitter: Umbrel

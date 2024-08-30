@@ -3,7 +3,7 @@ id: audiobookshelf
 name: Audiobookshelf
 tagline: Audiobook and podcast server
 category: media
-version: "2.7.1"
+version: "2.12.3"
 port: 13378
 description: >-
   Features:
@@ -61,22 +61,22 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  This release brings audiobookshelf from version 2.6.0 to 2.7.1. 
-
-  Note: OpenID Connect Authentication requires mobile app v0.9.70-beta or up
+  This release includes several improvements and bug fixes:
 
 
-  Added
+  Fixed:
+    - Resolved server crash with SQLITE_CORRUPT error (reverted Unicode extension).
+    - Reverted session MemoryStore to default.
+    - Fixed podcast episode download request failing due to user-agent string.
+    - Corrected UNC path normalization.
 
-  - Year in review stats images to user stats page
+  Changed:
+    - Updated localization for “Year in Review” images.
+    - Added logging for library item downloads.
+    - Reverted accent-insensitive search.
+    - Changelog modal now shows all releases with the same major/minor version.
+    - Added more translations, including Simplified Chinese.
 
-  - Ability to fetch book data in uploader
-
-  - Zoom controls to comic reader
-
-  Plus many fixes and changes...
-
-  
   Full release notes can be found at https://github.com/advplyr/audiobookshelf/releases
 submitter: Jasper
 submission: https://github.com/getumbrel/umbrel-apps/pull/302

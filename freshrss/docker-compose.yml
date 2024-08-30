@@ -5,9 +5,10 @@ services:
     environment:
       APP_HOST: freshrss_server_1
       APP_PORT: 80
+      PROXY_AUTH_WHITELIST: "/api/*"
 
   server:
-    image: linuxserver/freshrss:1.22.1@sha256:705b4a5a1b50244ead4002f8c04f0c4e0ae9750a618e75cd73a9258c6b0a381c
+    image: linuxserver/freshrss:1.24.2@sha256:c25bdcb475160fb9ac8e0dfd2c44d0c865663a8cc80c9698aa3f02a2f0fe2205
     restart: on-failure
     environment:
       - PUID=1000

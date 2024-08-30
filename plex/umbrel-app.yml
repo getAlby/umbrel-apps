@@ -2,7 +2,7 @@ manifestVersion: 1
 id: plex
 category: media
 name: Plex
-version: "1.32.8.7639"
+version: "1.40.5.8897"
 tagline: Stream Movies & TV Shows
 description: >-
   Stream movies and TV shows, plus 300+ channels of live TV, instantly, without a subscription. Watch live TV and movies anywhere, from any device, with Plex.
@@ -30,31 +30,25 @@ permissions:
   - STORAGE_DOWNLOADS
 releaseNotes: >-
   NEW:
-  
-  - (Web) Updated to 4.116.1
+
+    - Ad detection in libraries without DVR
+    - Improved subtitle burn-in performance with Hardware Transcoding
+    - Added preference to select tone mapping algorithm (available on some platforms/devices)
+    - Added support for HW Tonemapping on Windows for some Intel devices
+    - Web updated to 4.136.1
 
 
   FIXES:
 
-  - (Library) “Episode sorting” and “Album sorting” preferences had meaningless “Library default” global library setting (#14522)
+    - Improved library item sorting
+    - Enhanced performance when scanning new movie items
+    - Fixed filtering of shared media by type
+    - Improved default sorting to use natural sorting
 
-  - (Library) The default season sort order in TV libraries may not work as intended (#14570)
 
-  - (LiveTV) Transcoded video would fail to play in some circumstances (#14539)
+  ⚠️ This release removes support for legacy plug-ins on Nvidia Shield devices
 
-  - (Metadata) Items could lose metadata if a refresh request failed due to a network failure (#14551)
 
-  - (Player) Controlling a player didn’t work in some cases (#14567)
-
-  - (Sharing) Sharing a single episode was not playable by sharee (#14559)
-
-  - (Transcoder) HW transcoding failed on GeminiLake CPUs when running on linux (#14465)
-
-  - (Transcoder) Videos HW encoded on the shield would display a black screen on some devices (#14384)
-
-  - (Updater) Windows Updater would hang when run with PMSService (#14322)
- 
-
-  See full release notes here: https://www.videohelp.com/software/Plex
+  Full release notes are available at https://www.videohelp.com/software/Plex
 submitter: Umbrel
 submission: https://github.com/getumbrel/umbrel-apps/commit/60878f278d544b204d8e7c96240c797f43a9b319

@@ -1,0 +1,48 @@
+manifestVersion: 1.1
+id: maybe
+category: finance
+name: Maybe
+version: 'v0.1.0-alpha.16'
+tagline: The OS for your personal finances
+description: >-
+  Maybe is a fully (your finances are secure) open-source OS for your personal finances built by
+  a small team alongside an incredible community.
+
+
+  This is an early access release of Maybe that is only available to those who self-host.
+  Maybe is under active development and is still working towards a stable release with a full feature set.
+
+
+  🛠️ MULTI-CURRENCY SUPPORT
+
+
+  Most currently available features will work out of the box. However, Maybe requires a Synth API key if you would like to use multi-currency support.
+
+  1. Sign up for a Synth API key at https://synthfinance.com/
+
+  2. Add your Synth API key to the .env file at ~/umbrel/app-data/maybe/.env
+releaseNotes: >-
+  This update introduces a "self resolution" issue tracking system and improvements to property and vehicle accounts:
+
+    - Users can now input details for their property and vehicle accounts
+    - In the future, Maybe will support data providers for automatic valuation of properties and vehicles
+    - Estimated market values will be added periodically as "Valuations" in the value tab of each account
+    - Account balance history graphs will reflect these valuations
+
+
+  Full release notes are found at https://github.com/maybe-finance/maybe/releases.
+developer: Maybe
+website: https://maybe.co/
+dependencies: []
+repo: https://github.com/maybe-finance/maybe
+support: https://github.com/maybe-finance/discussions
+port: 3063
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ''
+defaultUsername: ''
+defaultPassword: ''
+submitter: CaptainCodeman
+submission: https://github.com/getumbrel/umbrel-apps/pull/1105

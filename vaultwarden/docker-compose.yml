@@ -8,7 +8,7 @@ services:
       PROXY_AUTH_ADD: "false"
 
   server:
-    image: vaultwarden/server:1.30.0@sha256:27638a2ae977d66d99891c06562ff9ba78a60869d2e5a94cf2953f1d03fde12f
+    image: vaultwarden/server:1.32.0@sha256:71668d20d4208d70919cf8cb3caf3071d41ed4b7d95afe71125ccad8408b040d
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 1m
