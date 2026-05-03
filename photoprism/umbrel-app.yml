@@ -2,7 +2,7 @@ manifestVersion: 1
 id: photoprism
 category: files
 name: PhotoPrism
-version: "240711-2197af848"
+version: "260305-fad9d5395"
 tagline: Self-host your photo and video library
 description: >-
   PhotoPrism® is a privately hosted app for browsing, organizing, and
@@ -42,13 +42,24 @@ defaultUsername: "admin"
 deterministicPassword: true
 torOnly: false
 releaseNotes: >-
-  What's new?
+  This service release focuses on security hardening, interoperability improvements, and bug fixes.
 
-    - Added support for single sign-on via OpenID Connect (OIDC)
-    - Added support for MPEG-5 Essential Video Coding (EVC)
-    - Added filter to transcode 10bit videos with Intel QSV
-    - Local passwords can now be removed using the CLI
-    - Updated French and Japanese translations
+
+  Key features and improvements:
+    - Added support for Ollama configuration via OLLAMA_BASE_URL and OLLAMA_API_KEY environment variables
+    - Improved Ollama caption generation with better fallback handling for reasoning models
+    - Fixed merged photos incorrectly keeping image type after video file merges
+    - Fixed GPS coordinate handling near map boundaries in Places
+    - Fixed emoji subfolders conflicting with parent folder albums
+    - Fixed folder album path collisions caused by truncated slugs
+    - Hidden results now display file error reasons in Card and List views
+    - Improved WebDAV response headers for better interoperability
+    - Added HTTP security hardening configuration options
+    - Improved Gzip route exclusion performance
+    - Fixed issues when hosting on a shared domain
+    - Improved compatibility with Google OIDC identity provider
+    - Updated French, German, Latvian, and Romanian translations
+
 
   Full release notes can be found at: https://github.com/photoprism/photoprism/releases/
 submitter: Umbrel

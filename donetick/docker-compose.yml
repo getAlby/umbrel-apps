@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: donetick_app_1
+      APP_PORT: 2021
+      PROXY_AUTH_ADD: "false"
+
+  app:
+    image: donetick/donetick:v0.1.75@sha256:5c207a86e5425052e9ffe5286f96f71babfe57337760d303a5fb56a856790d11
+    user: "1000:1000"
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data/app:/donetick-data
+      - ${APP_DATA_DIR}/data/config:/config
+    environment:
+      - DT_ENV=selfhosted
+      - DT_SQLITE_PATH=/donetick-data/donetick.db

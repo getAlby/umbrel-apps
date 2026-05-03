@@ -12,7 +12,7 @@ services:
     environment:
       CORSANYWHERE_REQUIRE_HEADERS: "host"
   web:
-    image: ghcr.io/hzrd149/nostrudel:0.38.3@sha256:cda4e5964e2f24f118547189819465682997fe8b3d6e0b688a3ae0685fed00da
+    image: ghcr.io/hzrd149/nostrudel:0.46.1@sha256:c89738d354beeef4c41a3b73d483ee8a5ba03950691d0966a7310ed10fc980ef
     restart: on-failure
     stop_grace_period: 1m
     init: true

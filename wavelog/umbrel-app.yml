@@ -1,0 +1,58 @@
+manifestVersion: 1.1
+id: wavelog
+name: Wavelog
+version: "2.4.1"
+tagline: "Amateur radio logging software"
+description: >-
+  ⚠️ See below for important set-up instructions.
+
+   Wavelog is a powerful web-based amateur radio logging application that allows you to log and manage your radio contacts with ease. It supports various features like QSO logging, award tracking, and integration with online services like LoTW and eQSL.
+
+  🛠️ SET-UP INSTRUCTIONS
+
+   During the setup wizard, you will be prompted to configure the application's database connection. Please use the following settings:
+
+    - Hostname: wavelog-db
+    - Database: wavelog
+    - Username: wavelog
+    - Password: wavelog
+
+  This ensures that the app will connect to the correct database and function properly.
+category: social
+developer: DF2ET, DJ7NT, HB9HIL, LA8AJA
+website: https://www.wavelog.org
+repo: https://github.com/wavelog/wavelog
+support: https://github.com/wavelog/wavelog/issues
+port: 8099
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+dependencies: []
+submitter: LU5JPL
+submission: https://github.com/getumbrel/umbrel-apps/pull/3323
+releaseNotes: >-
+  This is a maintenance release fixing a number of bugs and refactoring several pages including DX-Cluster, Advanced Logbook, and JCC award.
+
+
+  Key highlights include:
+    - Fixed a bug in logic for ITU zone awards
+    - Fixed DXCC stats not showing when propagation mode was not set
+    - Fixed a bug on the visitor page that caused a 500 error
+    - Fixed home QTH calculation on the DX-Cluster map
+    - Added source filter to DX-Cluster band list
+    - Added mode and heatmap to the Timeplotter
+    - Added wrapping of CQ and ITU zones in the Advanced Logbook map
+    - Fixed Quicksearch in the Advanced Logbook
+    - Fixed duplicate mode issue in the Advanced Logbook filter dropdown
+    - Added QSO merge functionality to the Advanced Logbook
+    - Refactored JCC award with major speed increase
+    - Added band slots to the DXCC summary for "All Bands" view
+    - Fixed flickering local time display in logging view while changing callsigns
+    - Extended filters for the get_contacts_adif API
+
+
+  Full release notes can be found at https://github.com/wavelog/wavelog/releases

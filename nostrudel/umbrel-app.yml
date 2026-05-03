@@ -2,13 +2,26 @@ manifestVersion: 1
 id: nostrudel
 category: social
 name: noStrudel
-version: "0.38.3"
+version: "0.46.1"
 tagline: A sandbox for exploring nostr
 description: >-
   noStrudel is a nostr web client that is focused on exploring the nostr network.
 
   The focus is on power users or any other users who want to learn the inner workings of nostr.
-releaseNotes: ""
+releaseNotes: |
+  ### Minor Changes
+
+  - Add option for custom share service (njump.me)
+  - Add article reader component using native web TTS API
+  - Show favorite relays in discovery view
+  - Add relay feed to discovery view
+  - Redesign user profile navigation
+
+  ### Patch Changes
+
+  - Fix open graph link images not being blured
+  - Fix ncrypsec accounts not prompting for decryption password
+
 developer: hzrd149
 website: https://github.com/hzrd149/nostrudel
 dependencies: []

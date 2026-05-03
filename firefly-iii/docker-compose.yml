@@ -8,7 +8,7 @@ services:
       PROXY_AUTH_WHITELIST: "/api/*"
 
   server:
-    image: fireflyiii/core:version-6.1.19@sha256:309e0e5de9c777a45c7028807f25a5587d3f7607cde823258b0d7152bda353ce
+    image: fireflyiii/core:version-6.6.2@sha256:783676cad3a9aed58539ae270d6849f15abefc4300175f1526b3f46b74ad96ce
     # This image runs under the user/group www-data:www-data
     # user: "1000:1000"
     restart: on-failure

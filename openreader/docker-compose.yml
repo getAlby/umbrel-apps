@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: openreader_web_1
+      APP_PORT: 3003
+
+  web:
+    image: ghcr.io/richardr1126/openreader-webui:2.2.0@sha256:245e6b8914cff79cc4c1cea5251446b18199fcabb6e865f543f186a44f071baa
+    user: "1000:1000"
+    environment:
+      - API_BASE=http://kokoro_web_1:8880/v1 #Set the TTS API_BASE URL and/or API_KEY as the default for all devices. These values can also be overridden in the UI.
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data/docstore:/app/docstore

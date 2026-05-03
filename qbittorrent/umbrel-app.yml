@@ -2,12 +2,12 @@ manifestVersion: 1.1
 id: qbittorrent
 category: networking
 name: qBittorrent
-version: "4.6.6"
+version: "5.1.4"
 tagline: Free and reliable P2P Bittorrent client
 description: >-
   qBittorrent is an open-source software alternative to µTorrent. It's designed to meet the needs of most users while using as little CPU and memory as possible.
 
-  
+
   🛠️ SET-UP INSTRUCTIONS
 
 
@@ -22,26 +22,17 @@ description: >-
   - It is recommended to change the default password for the app after installation.
 
   - This app comes bundled with two alternative Web UI's: VueTorrent and Nightwalker. To enable them, navigate to tools --> options --> Web UI and select "Use alternative Web UI". In the "Files location" field, enter "/app/vuetorrent" for VueTorrent or "/app/nightwalker" for Nightwalker and then click "Save". 
-  
+
 
   ⚠️ qBittorrent downloads torrents over the Clearnet, not Tor.
 releaseNotes: >-
-  This update includes several bug fixes and improvements:
-
-
-  - Fixed handling of tags containing '&' character
-
-  - Fixed scroll bar visibility in Torrent Tags dialog
-
-  - Improved bulk changes application to content widget items
-
-  - Fixed zero status filters hiding when torrents are removed
-
-  - Fixed issue with changing Incomplete Save Path for torrents without metadata
-
-  - WebUI improvements for RSS rules and tracker list updates
-
-  - Updated User-Agent string for internal downloader and search engines
+  This update includes bug fixes and improvements:
+    - Fixed crashes related to torrent processing and specific Linux setups
+    - Fixed empty folders being left behind when deleting or moving torrents
+    - Fixed the search plugin updater
+    - Fixed an HTTP header issue affecting reverse proxy setups
+    - Fixed screen reader accessibility in the torrent list
+    - Improved tab key focus behavior in the UI
 
 
   Full release notes for qBittorrent are available at https://www.qbittorrent.org/news

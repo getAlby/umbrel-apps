@@ -1,8 +1,8 @@
-manifestVersion: 1
+manifestVersion: 1.1
 id: jellyfin
 category: media
 name: Jellyfin
-version: "10.9.10"
+version: "10.11.8"
 tagline: The Free Software Media System
 description: >-
   Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
@@ -32,18 +32,20 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  This update includes several bugfixes to improve your Jellyfin experience:
+  ⚠️ This update includes important security fixes. All users are strongly advised to upgrade immediately.
 
-    - Added support for AVIF image format
-    - Improved codec handling for better compatibility
-    - Fixed issues with NextUp queries and series recording
-    - Enhanced image handling and security
-    - Resolved problems with virtual seasons and missing episodes
+
+  Key improvements in this release:
+    - Fixed regressions introduced in 10.11.7
+    - Fixed subtitle saving and library subtitle download language handling
+    - Fixed querying media with language filters
+    - Improved system stability and performance
 
 
   Full release notes can be found at https://github.com/jellyfin/jellyfin/releases
 torOnly: false
 permissions:
   - STORAGE_DOWNLOADS
+  - GPU
 submitter: Umbrel
 submission: https://github.com/getumbrel/umbrel-apps/commit/60878f278d544b204d8e7c96240c797f43a9b319

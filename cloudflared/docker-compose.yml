@@ -21,10 +21,10 @@ services:
       CLOUDFLARED_TOKEN_FILE: "/app/data/token"
 
   connector:
-    image: ghcr.io/radiokot/umbrel-cloudflared-connector:1.0.0-cf.2024.6.1@sha256:6f008e93af8c1230ad3d13df853aa182344eca5577725bf0ce80376de029a809
+    image: ghcr.io/radiokot/umbrel-cloudflared-connector:1.0.1-cf.2026.3.0@sha256:8f883ef254bbf44ba94a2647233b36723fe51cf84690ba9b5311145f3b2a8892
     hostname: cloudflared-connector
     restart: on-failure
-    stop_grace_period: 5s
+    stop_grace_period: 3s
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:

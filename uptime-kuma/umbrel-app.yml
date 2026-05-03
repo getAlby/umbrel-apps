@@ -2,7 +2,7 @@ manifestVersion: 1
 id: uptime-kuma
 category: networking
 name: Uptime Kuma
-version: "1.23.13-push"
+version: "2.2.1"
 tagline: Self-hosted uptime monitoring tool
 description: >
   Uptime Kuma is a self-hosted monitoring tool like Uptime Robot.
@@ -39,9 +39,22 @@ gallery:
 path: ""
 defaultPassword: ""
 releaseNotes: >
-  This release brings Push monitor functionality to Uptime Kuma on umbrelOS. Push monitors allow you to ping your Uptime Kuma instance from external services/servers to act as a check-in.
-  
+  New features:
+    - Added Fluxer notification provider
+    - Set process title to "uptime-kuma" for easier process identification
 
-  Full release notes for Uptime Kuma versions can be found at https://github.com/louislam/uptime-kuma/releases
+
+  Bug fixes:
+    - Fixed isParentActive return type
+    - Fixed Fluxer input styling and Discord input visibility
+    - Fixed removal of uptime ratio and average response time from Prometheus metrics
+    - Restored AWS and Azure package support that was previously removed
+
+
+  Security fixes:
+    - Fixed a moderate security issue (GHSA-v832-4r73-wx5j)
+
+
+  Full release notes can be found at https://github.com/louislam/uptime-kuma/releases
 submitter: Philipp Haussleiter
 submission: https://github.com/getumbrel/umbrel/pull/1148

@@ -18,13 +18,13 @@ services:
   app_proxy:
     environment:
       APP_HOST: immich_server_1
-      APP_PORT: 3001
-      PROXY_AUTH_WHITELIST: "/api/*,/search/*"
+      APP_PORT: 2283
+      PROXY_AUTH_ADD: "false"
 
   server:
-    image: ghcr.io/immich-app/immich-server:v1.112.1@sha256:c4e817f0eadbd9a6c2699cc884d5e7070428daec813c17db77d31fcca5b78ca6
+    image: ghcr.io/immich-app/immich-server:v2.7.5@sha256:c15bff75068effb03f4355997d03dc7e0fc58720c2b54ad6f7f10d1bc57efaa5
     volumes:
-      - ${APP_DATA_DIR}/data/upload:/usr/src/app/upload
+      - ${APP_DATA_DIR}/data/upload:/data
     environment:
       <<: *env
     depends_on:
@@ -33,7 +33,7 @@ services:
     restart: on-failure
 
   machine-learning:
-    image: ghcr.io/immich-app/immich-machine-learning:v1.112.1@sha256:9600eff5a66ae426293f00b171711bc1647c85cf966d759ee08ab2d05e0580b5
+    image: ghcr.io/immich-app/immich-machine-learning:v2.7.5@sha256:a2501141440f10516d329fdfba2c68082e19eb9ba6016c061ac80d23beadf7f3
     volumes:
       - ${APP_DATA_DIR}/data/model-cache:/cache
     environment:
@@ -41,22 +41,22 @@ services:
     restart: on-failure
 
   redis:
-    image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3
+    image: valkey/valkey:8-bookworm@sha256:fea8b3e67b15729d4bb70589eb03367bab9ad1ee89c876f54327fc7c6e618571
     user: "1000:1000"
     restart: on-failure
     volumes:
       - ${APP_DATA_DIR}/data/redis:/data
 
   postgres:
-    image: tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:90724186f0a3517cf6914295b5ab410db9ce23190a2d9d0b9dd6463e3fa298f0
-    user: "1000:1000"
-    command: ["postgres", "-c" ,"shared_preload_libraries=vectors.so", "-c", 'search_path="$$user", public, vectors', "-c", "logging_collector=on", "-c", "max_wal_size=2GB", "-c", "shared_buffers=512MB", "-c", "wal_compression=on"]
+    image: ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0@sha256:41eacbe83eca995561fe43814fd4891e16e39632806253848efaf04d3c8a8b84
+    # new postgres image does not work rootless
+    #user: "1000:1000"
     environment:
       <<: *env
       POSTGRES_PASSWORD: *db_password
       POSTGRES_USER: *db_username
       POSTGRES_DB: *db_database_name
-      POSTGRES_INITDB_ARGS: '--data-checksums'
+      POSTGRES_INITDB_ARGS: "--data-checksums"
     volumes:
       - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
     restart: on-failure

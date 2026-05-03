@@ -3,32 +3,34 @@ id: pocketbase
 name: PocketBase
 tagline: Open Source backend for your next SaaS and Mobile app in 1 file
 category: developer
-version: "0.22.19"
+version: "0.37.4"
 port: 5400
 description: >-
   PocketBase is an open source backend consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.
 
 
   ⏱️ Realtime database
-  
+
   Embedded performant database with schema builder, data validations, realtime subscriptions and easy to use REST api.
 
 
   🪪 Authentication
-  
+
   Manage your app users and handle email/password and OAuth2 sign ups (Google, Facebook, GitHub, GitLab) without the hassle.
 
-  
+
   💾 File storage
-  
+
   Sanely store files locally or in a S3 storage. Easily attach media to your database records and generate thumbs on the fly.
-  
-  
+
+
   🧩 Extendable
-  
+
   Use as a standalone app OR as a framework, that you can extend via Go and JavaScript hooks to create your own custom portable backend.
 developer: PocketBase
 website: https://pocketbase.io/
+defaultUsername: "umbrel@umbrel.local"
+defaultPassword: "umbrel-pocketbase"
 submitter: Sharknoon
 submission: https://github.com/getumbrel/umbrel-apps/pull/1082
 repo: https://github.com/pocketbase/pocketbase
@@ -41,7 +43,17 @@ gallery:
 path: /_/
 dependencies: []
 releaseNotes: >-
-  Additional parsing for the Apple OAuth2 user token response field has been added to attempt fetching the name of the authenticated user.
+  ⚠️ This release includes a security fix related to a pre-hijacking OAuth2 linking vulnerability
+
+
+  This release includes security fixes and several improvements:
+    - Fixed a pre-hijacking OAuth2 linking vulnerability
+    - Added dummy bcrypt password check to minimize enumeration timing attacks when registrations are disabled
+    - Fixed SMTP IPv6 network address format
+    - Fixed autocomplete selection not properly updating the underlying input value
+    - Added backups list scroll container
+    - Optimized record upsert and preview modals data loading to minimize layout jumps
+    - Updated Bitbucket, GitHub, GitLab and Gitea/Forgejo OAuth2 providers to reflect recent API changes
 
 
   Full release notes are found at https://github.com/pocketbase/pocketbase/releases

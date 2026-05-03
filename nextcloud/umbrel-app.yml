@@ -2,7 +2,7 @@ manifestVersion: 1.1
 id: nextcloud
 category: files
 name: Nextcloud
-version: "29.0.5"
+version: "33.0.2"
 tagline: Productivity platform that keeps you in control
 description: >-
   Nextcloud puts your data at your fingertips, under your control.
@@ -25,16 +25,15 @@ description: >-
 
   Note: After logging in to Nextcloud please change the password to something secure before sharing the address with anyone.
 releaseNotes: >-
-  ⚠️ If you are upgrading from a version older than 29.0.4, this update may take several minutes to complete. Please be patient.
+  This update includes bug fixes and improvements:
+    - 📁 New option to limit the number of recent files shown in Files settings
+    - 🔗 Fixed share creation when password-protected shares are not supported by the share type
+    - ↩️ Fixed unwanted redirect when accepting a share failed
+    - 🔄 Fixed dependency mismatch in the updater
+    - 🧩 Version bumps for all stable33 apps (no functional changes)
 
 
-  Key highlights:
-    - Enhanced performance and stability
-    - Improved file sharing and collaboration features
-    - Various security enhancements
-
-
-  Full release notes can be found at https://github.com/nextcloud/server/releases
+  Full release notes are found at https://github.com/nextcloud-releases/server/releases
 developer: Nextcloud GmbH
 website: https://nextcloud.com
 dependencies: []

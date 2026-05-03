@@ -7,7 +7,7 @@ services:
       APP_PORT: 3001
   
   web:
-    image: shahanafarooqui/rtl:v0.15.2@sha256:e2c40d04821a1a6e9bcb55b4276c428c6c416ab1c33b4efd256366430234ea6a
+    image: shahanafarooqui/rtl:v0.15.8@sha256:54131152cba02a968d83fcc89c07426bfb979372f743649ba1e2626426a34dc0
     user: "1000:1000"
     restart: on-failure
     stop_grace_period: 1m
@@ -36,7 +36,7 @@ services:
         BOLTZ_MACAROON_PATH: "/boltz/.boltz-lnd/macaroons"
 
   boltz:
-    image: boltz/boltz-client:2.0.2-compat@sha256:dc7643381306d29a035a5422b5c217eccf0e08678c4b863c0c62e2dcb6bf6ed6
+    image: boltz/boltz-client:2.11.1@sha256:25a984cc76b0d232573cffe7088c2cb2e50b6b8955e09f68d768ef5fc7215c1d
     user: "1000:1000"
     restart: "on-failure"
     stop_grace_period: "1m"

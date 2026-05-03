@@ -2,58 +2,65 @@ manifestVersion: 1.1
 id: immich
 category: files
 name: Immich
-version: "v1.112.1"
+version: "v2.7.5"
 tagline: High-performance photo and video backup solution
 description: >-
   An open-source and high-performance self-hosted backup solution for the videos and photos on your mobile device
 
-  
+
   ⚠️ Immich is under very active development. Expect bugs and changes. Do not use it as the only way to store your photos and videos!
 
-  
+
   Features:
-  
+
   - Upload and view videos and photos
-  
+
   - Auto backup when the app is opened
-  
+
   - Selective album(s) for backup
-  
+
   - Download photos and videos to a local device
-  
+
   - Multi-user support
-  
+
   - Album and Shared albums
-  
+
   - Scrubbable/draggable scrollbar
-  
+
   - Support RAW (HEIC, HEIF, DNG, Apple ProRaw)
-  
+
   - Metadata view (EXIF, map)
-  
+
   - Search by metadata, objects and image tags
-  
+
   - Administrative functions (user management)
-  
+
   - Background backup
-  
+
   - Virtual scroll
-  
+
   - OAuth support
-  
+
   - LivePhoto backup and playback
-  
+
   - User-defined storage structure
 releaseNotes: >-
   ⚠️ As usual, please check that your mobile app is compatible with this release of Immich.
 
 
-  Welcome to version v1.112.1 of Immich. This release includes bug fixes and UI enhancements. Some of the key highlights include:
-    - Material color theming for the mobile app
-    - Open in map view on the web
-    - Star rating
-    - Screen stays on and auto darkens when performing a long session of foreground upload
-    - New search models with improved performance
+  This release includes new features and bug fixes. Highlights include:
+    - Added support for helmet/Content Security Policy (CSP) configuration via the IMMICH_HELMET_FILE environment variable
+    - Added ability to create a new face/person on the fly in the face tag editor
+    - Added "Remove from album" action in the asset viewer
+    - Added "Move to locked folder" action in the folder view
+    - Added keyboard shortcuts for the photo editor (press E to open, [ and ] to rotate, ENTER to save)
+    - Improved duplicate resolution - server now automatically suggests which asset to keep and syncs metadata
+    - Version checks now use Immich's own infrastructure instead of GitHub
+    - Fixed live photo and video downloads in Safari being overwritten
+    - Fixed XSS vulnerability in the panorama photo viewer
+    - Fixed external library import issues
+    - Fixed people search not showing results for 3 or fewer characters
+    - Fixed rate limiting and deduplication for version checks
 
 
   Full release notes are found at https://github.com/immich-app/immich/releases
@@ -70,5 +77,7 @@ gallery:
 path: ""
 defaultUsername: ""
 defaultPassword: ""
+permissions:
+  - GPU
 submitter: levma
 submission: https://github.com/getumbrel/umbrel-apps/pull/239

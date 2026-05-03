@@ -3,7 +3,7 @@ version: "3.7"
 services:
   web:
     network_mode: "host" # TODO: We can remove this later with some iptables magic
-    image: tailscale/tailscale:v1.72.1@sha256:83a6faec34866f70914a7d241d6ca749e6914f08f4f9059d942e1c3088dc001b
+    image: tailscale/tailscale:v1.96.5@sha256:dbeff02d2337344b351afac203427218c4d0a06c43fc10a865184063498472a6
     restart: on-failure
     stop_grace_period: 1m
     command: "sh -c 'tailscale web --listen 0.0.0.0:8240 & exec tailscaled --tun=userspace-networking'"

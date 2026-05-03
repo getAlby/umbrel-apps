@@ -1,0 +1,50 @@
+manifestVersion: 1.1
+id: lobe-chat
+name: Lobe Hub
+tagline: Your self-hosted AI workspace for chat, agents, and knowledge
+category: ai
+version: "2.1.54"
+port: 7455
+description: >-
+  💬 Lobe Hub is a self-hosted AI workspace for conversations, agent teams,
+  knowledge bases, and multimodal workflows.
+
+
+  🗣️ It supports speech, multimodal chat, files, knowledge retrieval, and a rich
+  provider ecosystem including OpenAI-compatible APIs, Anthropic, Google, Groq,
+  Ollama, and more.
+
+
+  🤖 This Umbrel package now follows the current upstream self-hosted deployment
+  model and includes PostgreSQL, Redis, and S3-compatible object storage for
+  uploads and knowledge base features.
+
+
+  🔑 To get started, create an account on first launch and then add one or more
+  AI provider API keys in the Lobe Hub settings.
+developer: LobeHub
+website: https://lobehub.com/
+submitter: al-lac
+submission: https://github.com/getumbrel/umbrel-apps/pull/1901
+repo: https://github.com/lobehub/lobehub
+support: https://github.com/lobehub/lobehub/issues
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+defaultUsername: ""
+defaultPassword: ""
+dependencies: []
+releaseNotes: >-
+  This is a hotfix release addressing a navigation regression introduced in v2.1.53.
+
+
+  Key changes:
+    - Fixed stale chat state when switching between agents — the previous topic no longer carries over
+    - Fixed conversation context isolation so the correct agent/topic/thread state loads immediately on switch
+    - Fixed sidebar thread list staying expanded while viewing a subtopic
+    - Fixed the header showing the correct thread title for active subtopics
+
+
+  Full release notes are available at https://github.com/lobehub/lobehub/releases
+path: ""

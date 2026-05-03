@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: super-productivity_web_1
+      APP_PORT: 80
+
+  web:
+    image: johannesjo/super-productivity:v18.3.0@sha256:4b84c54a4b1221712896fdcf67fcbdd3b3118c972a45f57e11b0fd2a2164d1d2
+    restart: on-failure

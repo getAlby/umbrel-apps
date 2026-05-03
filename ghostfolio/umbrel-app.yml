@@ -2,7 +2,7 @@ manifestVersion: 1
 id: ghostfolio
 category: finance
 name: Ghostfolio
-version: "2.105.0"
+version: "3.0.1"
 tagline: Manage your wealth like a boss
 description: >-
   Ghostfolio is a privacy-first, open source dashboard for your personal finances.
@@ -17,6 +17,8 @@ description: >-
   
   Ghostfolio empowers busy people to keep track of stocks, ETFs or cryptocurrencies
   without being tracked.
+backupIgnore:
+  - data/redis/*
 developer: Ghostfolio
 website: https://ghostfol.io/
 dependencies: []
@@ -30,13 +32,15 @@ gallery:
 path: ""
 deterministicPassword: false
 torOnly: false
-releaseNotes: >
-  This release includes several improvements:
-    - Added support to deactivate rules in the X-ray section
-    - Improved the language localization for German
-    - Fixed currency conversion for fees and values in dividend import and activities service
+releaseNotes: >-
+  This release includes improvements and bug fixes:
+    - Migrated to Material Design 3 for a refreshed look and feel
+    - Moved total amount, change, and performance with currency effects on the analysis page to general availability
+    - Moved copy-to-clipboard buttons for ISIN and symbol in the holding detail dialog to general availability
+    - Fixed the cash label in the holdings table on the portfolio and public pages
+    - Improved styling of buttons and input fields across various components
 
 
-  Full release notes are found at https://github.com/ghostfolio/ghostfolio/releases.
+  Full release notes are found at https://github.com/ghostfolio/ghostfolio/releases
 submitter: BeauAgst
 submission: https://github.com/getumbrel/umbrel-apps/pull/396

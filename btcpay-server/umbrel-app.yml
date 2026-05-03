@@ -2,7 +2,7 @@ manifestVersion: 1
 id: btcpay-server
 category: bitcoin
 name: BTCPay Server
-version: "1.13.5-hotfix1"
+version: "2.3.8"
 tagline: Accept Bitcoin payments with 0 fees & no 3rd party
 description: >-
   BTCPay Server is a payment processor that allows you to receive
@@ -34,16 +34,27 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  This hotfix for the umbrelOS app store removes depecrated database migration options from NBXplorer, which were preventing BTCPay Server from starting properly.
+  This release comes with new features and bug fixes.
 
 
-  Highlights from previous release notes:
+  New features:
+    - API/Subscriptions: Add update offering route
+    - API/Subscriptions: Add update offering plan
+    - PoS: View-only store users can browse login links and invoices from the Update PoS page
+    - PoS: Store users can now generate a login QR code for any other store user
+    - Add LUD-21 (LNURL-pay Verify) support
+    - Add reporting for subscriptions
 
-    - Checkout now displays an item description if one is available
-    - Crashed plugins are now automatically disabled on the dashboard
-    - Refunds have now been added to reports
-    - General improvments to the POS, receipts, and invoices
+  Bug fixes:
+    - Reserved addresses page should not show addresses from old wallets
+    - QR code logins should not expire after only a few hours
+    - Avoid double translation of already localized view content
+    - Phoenixd incorrectly marks payment as partial
+    - Top-Up invoices paid by BOLT11 should become settled
 
-  Full release notes can be found at https://github.com/btcpayserver/btcpayserver/releases.
+  Miscellaneous
+    - Remove support for importing keys to Bitcoin wallet via RPC
+
+  Full release notes can be found at https://github.com/btcpayserver/btcpayserver/releases
 submitter: Umbrel
 submission: https://github.com/getumbrel/umbrel/pull/353

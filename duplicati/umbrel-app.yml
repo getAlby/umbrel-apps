@@ -3,7 +3,7 @@ id: duplicati
 name: Duplicati
 tagline: Store securely encrypted backups in the cloud
 category: files
-version: "2.0.8.1_beta_2024-05-07"
+version: "v2.3.0.1_stable_2026-04-24"
 port: 38476
 description: >-
   Pick your own backend and store encrypted backups of your umbrel files anywhere!
@@ -37,7 +37,23 @@ gallery:
   - 1.jpg
   - 2.jpg
   - 3.jpg
-releaseNotes: ""
+releaseNotes: >-
+  This is a patch release for Duplicati 2.3.0.1, fixing several issues discovered after the 2.3.0.0 release.
+
+
+  New fixes in 2.3.0.1:
+    - Added Hetzner and DigitalOcean regions to S3 provider dropdowns
+    - Fixed an issue with dollar signs in filenames confusing filters
+    - Improved disk usage and handling for the new restore flow
+    - Fixed progress reporting when using multiple destinations
+    - Fixed an auto-refresh loop in the UI
+    - Fixed an issue with saving settings from the UI in specific scenarios
+    - Fixed an issue where empty files could cause restored databases to be marked as inconsistent
+    - Added resilience for faulty translations
+    - Check quotas when storing at multiple destinations
+
+
+  Full release notes can be found at https://github.com/duplicati/duplicati/releases
 dependencies: []
 permissions:
   - STORAGE_DOWNLOADS

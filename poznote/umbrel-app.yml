@@ -1,0 +1,48 @@
+manifestVersion: 1
+id: poznote
+name: Poznote
+tagline: A powerful app for taking notes
+category: files
+version: "6.6.1"
+port: 8389
+description: >-
+  📝 Poznote is a clean and focused application designed to help users capture, structure, and refine information in a flexible workspace. It combines a rich text editor with Markdown formatting to support both quick jotting and long form writing, allowing thoughts to grow and change without friction.
+
+
+  The interface encourages fluid organization through tags, search, and customizable workspaces so ideas remain easy to find even as the collection expands. Poznote supports attachments for images, documents, and other files, making it possible to keep related material together within a single note.
+
+
+  It includes tools for creating checklists, tasks, and reminders that integrate directly into the writing flow rather than feeling like separate modules. A built in drawing and diagramming tool powered by an Excalidraw integration allows users to sketch concepts, create charts, or visualize ideas alongside text.
+
+
+  Notes can be edited, restored from the trash, exported for safekeeping, or duplicated to act as templates for recurring structures. Poznote aims to create a writing environment where text, media, ideas, and tasks coexist naturally, offering a streamlined way to manage information with clarity and continuity.
+developer: Timothé Poznanski
+website: https://poznote.com/
+submitter: dennysubke
+submission: https://github.com/getumbrel/umbrel-apps/pull/4268
+repo: https://github.com/timothepoznanski/poznote
+support: https://github.com/timothepoznanski/poznote/issues
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+  - 4.jpg
+releaseNotes: >-
+  What's new in this release:
+    - Fixed an issue causing the tags sort bar to not appear in desktop view
+    - Removed live Markdown formatting due to unintended side effects
+    - Fixed the search bar when scrolling
+    - Improved Markdown table insertion with the ability to press Enter to create a new row
+    - Added attachment display and improved media handling in public notes
+    - Added ability to align text in table columns to the left, right, or center
+    - Added a new Markdown syntax help page with live search and filtering
+    - Added OIDC Bearer JWT support for the REST API with automatic user provisioning
+    - Added a selector to filter notes by type in the Note Manager
+    - Fixed various UI bugs and Markdown rendering issues
+
+
+  Full release notes can be found at https://github.com/timothepoznanski/poznote
+dependencies: []
+path: ""
+defaultUsername: "admin_change_me"
+defaultPassword: "admin"

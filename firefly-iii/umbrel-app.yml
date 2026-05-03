@@ -1,8 +1,8 @@
-manifestVersion: 1
+manifestVersion: 1.1
 id: firefly-iii
 category: finance
 name: Firefly III
-version: "6.1.19"
+version: "6.6.2"
 tagline: Your personal finance manager
 description: >-
   Firefly III is a manager for your personal finances. It is self-hosted and open source. This means that it's free, it has no ads and no tracking.
@@ -31,6 +31,8 @@ description: >-
   JSON rest API
 
   For the advanced and mobile users out there, Firefly III features an expansive JSON REST API that allows you to tap into Firefly III's most important features. Create transactions, manage categories and get chart data from any app or system.
+backupIgnore:
+  - data/logs/*
 developer: Firefly III
 website: https://www.firefly-iii.org/
 dependencies: []
@@ -45,19 +47,16 @@ path: ""
 deterministicPassword: false
 torOnly: false
 releaseNotes: >-
-  🚨 This update includes fixes for a security issue. Please update as soon as possible. Specific details can be found at https://github.com/firefly-iii/firefly-iii/security/advisories/GHSA-4gm4-c4mh-4p7w
-  
-
-  This update includes several bug fixes and improvements:
-    - Fixed issues with split recurring transaction titles.
-    - Resolved error during Docker container startup.
-    - Improved search functionality for internal references.
-    - Corrected amount calculation in reconciliation for bank accounts.
-    - Fixed expected withdrawals for daily recurring transactions.
-    - Calendar now shows green fields for recurring transactions.
-    - Improved currency exchange rate downloader.
+  🚨 Security fix: OAuth tokens could be generated before confirming your 2FA state, potentially allowing access to your data despite having MFA enabled. Please upgrade at your earliest convenience.
 
 
-  Full release notes are found at https://github.com/firefly-iii/firefly-iii/releases.
+  Key improvements in this release:
+    - Fixed running balance column not updating instantly for new records using rules
+    - Fixed year validator accepting invalid years when saving or editing a transaction
+    - Improved password validation
+    - Fixed shrunken sidebar expanding when navigating by clicking on icons
+
+
+  Full release notes are found at https://github.com/firefly-iii/firefly-iii/releases
 submitter: Umbrel
 submission: https://github.com/getumbrel/umbrel-apps/pull/378

@@ -2,7 +2,7 @@ manifestVersion: 1
 id: element
 category: social
 name: Element
-version: "1.11.75"
+version: "1.12.16"
 tagline: A glossy Matrix client compatible with Synapse
 description: >-
   Element is a new type of messaging app. You choose where your messages are stored, putting you in control of your data.
@@ -25,8 +25,8 @@ description: >-
 
 
   When you register or login through Element, you will need to change the address of the homeserver you are logging into from the default matrix.org to http://umbrel.local:8008 for local access.
-  
-  
+
+
   For seamless connection even when you are accessing Element away from home, simply install the "Tailscale" app on your Umbrel and your device you are using to access Element, and use http://umbrel:8008 as the address of your server.
 developer: New Vector Ltd
 website: https://element.io
@@ -43,12 +43,25 @@ defaultUsername: ""
 defaultPassword: ""
 torOnly: false
 submitter: Umbrel
-submission: https://github.com/getumbrel/umbrel/commit/bb10e17a6256db19767af7eaeb93e665ac275b24
+submission: https://github.com/getumbrel/umbrel/commit/bb10e17a6256db19767af7eaeb93d665ac275b24
 releaseNotes: >-
-  ⚠️ If you are using Synapse on your Umbrel as your Matrix homeserver, please update Synapse to the latest version available in the Umbrel App Store to maintain compatibility with Element.
-
-
-  This release includes security fixes for CVE-2024-42369 / GHSA-vhr5-g3pm-49fm. Please update as soon as possible.
+  Some key highlights in this release include:
+    - Added custom section creation to the room list
+    - Room list sections now expand automatically when a filter is toggled
+    - Room list sections now show activity markers
+    - Added a 'grab' cursor on the picture-in-picture view
+    - Spoilers are now hidden from desktop notifications
+    - Updated URL Preview settings
+    - Improved accessibility in settings
+    - Links without a protocol (e.g. http:// or https://) are no longer allowed in linked text
+    - Fixed crashes when opening Bridges in room settings
+    - Fixed leaving a call when leaving a room
+    - Fixed React hydration issues
+    - Fixed voice message recording falling back to default input unexpectedly
+    - Fixed expanded/collapsed state of room list sections
+    - Fixed left hand sidebar text being selectable
+    - Fixed collapsible left panel to use non-fractional widths
+    - Fixed clicking on separator to expand to 100% when no saved width is available
 
 
   Full release notes can be found at https://github.com/vector-im/element-web/releases

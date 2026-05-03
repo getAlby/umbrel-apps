@@ -8,7 +8,7 @@ services:
       PROXY_AUTH_ADD: "false"
 
   web:
-    image: ghcr.io/autobrr/autobrr:v1.45.0@sha256:1e28bcfaf93a145f07da330a6c8990dd9d846c22dc2f6d1da52d24b4b9a0d585
+    image: ghcr.io/autobrr/autobrr:v1.76.0@sha256:f0f4d73fcd77700b1c98233562cd94a78b9bf685a7594a0aac4f8a9436b5044d
     restart: on-failure
     stop_grace_period: 1m
     user: "1000:1000"

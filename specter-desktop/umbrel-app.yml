@@ -2,7 +2,7 @@ manifestVersion: 1
 id: specter-desktop
 category: bitcoin
 name: Specter Desktop
-version: "2.0.2"
+version: "2.1.7"
 tagline: Multisig with hardware wallets made easy
 description: >-
   Specter Desktop can be used to connect to the Bitcoin Core running on your Umbrel or an Electrum Server.
@@ -17,7 +17,7 @@ description: >-
 
   - Blockstream Jade
 
-  - ColdCard (optionally airgapped, using an SD card)
+  - ColdCard (optionally airgapped, using SD card)
 
   - Passport
 
@@ -50,9 +50,14 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  ⚠️ As usual, please create a full backup of Specter before updating by going to Settings in the app and clicking "Download Specter backup (zip file).
+  Key changes in this release:
+    - Fixed a startup crash related to SQLAlchemy by upgrading the Spectrum dependency
+    - Fixed a crash when Bitcoin Core is unreachable during login
+    - Fixed various issues with the macOS build artifacts
+    - Replaced debug print statements with proper logging in wallet code
+    - Various bug fixes and improvements
 
 
-  This is a large update that takes Specter Desktop from 1.14.5 to 2.0.2! Full release notes and detailed information is available at https://github.com/cryptoadvance/specter-desktop/releases
+  Full release notes and detailed information is available at https://github.com/cryptoadvance/specter-desktop/releases
 submitter: k9ert
 submission: https://github.com/getumbrel/umbrel/pull/339

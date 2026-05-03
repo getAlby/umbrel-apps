@@ -1,0 +1,19 @@
+services:
+
+  app_proxy:
+    environment:
+      APP_HOST: zigbee2mqtt_app_1
+      APP_PORT: 8080
+
+  app:
+    image: koenkk/zigbee2mqtt:2.9.2@sha256:2a21bbf7a664a149024bbe1f776e3151f28ed9db15948270dcbffb89544a41f0
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/data:rw
+      - /run/udev:/run/udev:ro
+    privileged: true
+    environment:
+      ZIGBEE2MQTT_CONFIG_FRONTEND_ENABLED: "true"
+      ZIGBEE2MQTT_CONFIG_FRONTEND_PORT: 8080
+      ZIGBEE2MQTT_CONFIG_MQTT_SERVER: "mqtt://mosquitto_broker_1:1883"
+      Z2M_ONBOARD_NO_REDIRECT: 1

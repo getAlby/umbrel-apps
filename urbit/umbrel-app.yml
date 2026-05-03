@@ -2,7 +2,7 @@ manifestVersion: 1
 id: urbit
 category: networking
 name: Urbit
-version: "v3.1"
+version: "v4.3"
 tagline: Run Urbit on your Umbrel
 description: >-
   Urbit is a personal server for self-sovereign personal & networked
@@ -35,13 +35,10 @@ torOnly: false
 submitter: ~mopfel-winrux
 submission: https://github.com/getumbrel/umbrel/pull/1246
 releaseNotes: >-
-  `vere-v3.1` is a a minor runtime release with the following highlighted features:
-    - Rebinding eyre HTTP cache entires.
-    - The runtime now automatically tries to open the Ames port on a home network using the NAT-PMP protocol. This will improve connectivity on self-hosted setups.
-    - Restore the ctrl+z functionality to instantly force kill the urbit process.
-    - Plug memory leaks related to DNS queries. This has resulted in significant uptime improvements for select Urbit Foundation infrastructure ships.
-    - More reliable lockfile and replay error handling.
-    - Miscellaneous error message improvements.
-  
+  vere-v4.3 is a minor release with the following highlighted fixes and features:
+    - The runtime now supports gzip compression of http responses, causing significant speedups for the tlon app.
+    - The windows build would immediately crash when receiving a directed messaging packet because of an improperly vendored libblake3 dependency.
+    - The lmdb version used by vere-v4.2 and below did not support sparse files on windows, causing the event log to balloon to 63 GB immediately on boot.
 
-  Full release notes here: https://github.com/urbit/vere/releases/tag/vere-v3.1
+
+  Full release notes here: https://github.com/urbit/vere/releases/tag/vere-v4.3

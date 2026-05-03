@@ -1,0 +1,51 @@
+version: '3.7'
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: openhands_web_1
+      APP_PORT: 3000
+
+  docker:
+    image: docker:28.0.4-dind@sha256:ddb0033088b4fab74881ade341a582e3c6c8021b82377703ba1a6106bd3ded44
+    privileged: true
+    network_mode: host
+    stop_grace_period: 1m
+    restart: on-failure
+    environment:
+      DOCKER_ENSURE_BRIDGE: "dind0:10.32.0.1/16"
+    entrypoint: /entrypoint.sh
+    command: >
+      dockerd
+        --bridge dind0
+        --data-root /data/data
+        --exec-root /data/exec
+        --host unix:///data/docker.sock
+        --pidfile /data/docker.pid
+    volumes:
+      - ${APP_DATA_DIR}/entrypoint.sh:/entrypoint.sh
+      - ${APP_DATA_DIR}/data/docker:/data
+
+  web:
+    image: ghcr.io/openhands/openhands:1.6.0@sha256:5c0dc26f467bf8e47a6e76308edb7a30af4084b17e23a3460b5467008b12111b
+    stdin_open: true
+    tty: true
+    pull_policy: always
+    healthcheck:
+      test: timeout 10s bash -c ':> /dev/tcp/127.0.0.1/3000' || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+    environment:
+      - SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.openhands.dev/openhands/runtime:0.62-nikolaik@sha256:95fc4d8e753f41d34cd564e78d3d64217c5d22296ea1cb7bf92614c8198de8f5
+      - WORKSPACE_MOUNT_PATH=/opt/workspace_base
+      - LOG_ALL_EVENTS=true
+    volumes:
+      - ${APP_DATA_DIR}/data/docker:/var/run:rw
+      - ${APP_DATA_DIR}/data/openhands:/.openhands-state:rw
+      - ${APP_DATA_DIR}/data/workspace:/opt/workspace_base:rw
+    extra_hosts:
+      - host.docker.internal:host-gateway
+      - ${APP_DOMAIN}:host-gateway
+    restart: on-failure

@@ -15,7 +15,7 @@ services:
 
   db:
     image: docker.io/library/postgres:16@sha256:46aa2ee5d664b275f05d1a963b30fff60fb422b4b594d509765c42db46d48881
-    restart: unless-stopped
+    restart: on-failure
     volumes:
       - ${APP_DATA_DIR}/data/pgdata:/var/lib/postgresql/data
     environment:
@@ -24,7 +24,7 @@ services:
       POSTGRES_PASSWORD: paperless
 
   webserver:
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.11.6@sha256:fca12ddea5509819dd0702cf128944aa23d01dd850a2536a96c2b46fb982b9bb
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.15@sha256:6c86cad803970ea782683a8e80e7403444c5bf3cf70de63b4d3c8e87500db92f
     restart: on-failure
     depends_on:
       - db
@@ -58,5 +58,5 @@ services:
       - "--chromium-allow-list=file:///tmp/.*"
 
   tika:
-    image: ghcr.io/paperless-ngx/tika:2.9.1-minimal@sha256:20db3df89eaeb1b271dd840888fe909b88b12f4b86ef641ec07a1d45d4c5168f
+    image: apache/tika:3.2.3.0@sha256:c0154cb95587cde64be74f35ada1a2bd7892219f3f0ac3c9dc6cab34046b3573
     restart: on-failure
